@@ -1,0 +1,53 @@
+import {
+  createVariantsWithTransition,
+  presetVariants,
+} from "@utils/animations";
+import { cn } from "@utils/index";
+import * as m from "motion/react-m";
+
+type SectionWrapperProps = {
+  children: React.ReactNode;
+  id: string;
+  className?: string;
+  title: string;
+  position: number;
+};
+
+const SectionWrapper: React.FC<SectionWrapperProps> = ({
+  children,
+  id,
+  className,
+  title,
+  position,
+}) => {
+  return (
+    <m.section
+      variants={createVariantsWithTransition(
+        presetVariants["fade-in-blur"].item
+      )}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{
+        type: "tween",
+        duration: 0.5,
+      }}
+      id={id}
+      className={cn(`w-full`, className)}
+    >
+      <h2 className="text-4xl font-bold mb-8 flex items-center gap-6 text-primary">
+        <span className="">0{position}.</span> {title}{" "}
+        <m.div
+          initial={{ scaleX: 0, originX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+          className="h-[2px] rounded-full bg-gradient-to-r from-primary from-10% to-90% via-black/50 to-transparent flex-1 min-w-0"
+        />
+      </h2>
+      {children}
+    </m.section>
+  );
+};
+
+export default SectionWrapper;

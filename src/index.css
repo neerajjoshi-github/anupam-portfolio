@@ -1,1 +1,51 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "manrope";
+  src: url("/fonts/manrope.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "tanker";
+  src: url("/fonts/tanker.otf") format("opentype");
+}
+
+:root {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(1 0 0);
+  --subtle: oklch(90% 0.02291 256.75);
+  --primary: oklch(90% 0.1617 161.02);
+  --secondary: oklch(75% 0.15 280);
+  --font-manrope: "manrope", sans-serif;
+  --font-tanker: "tanker", sans-serif;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-subtle: var(--subtle);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --font-manrope: var(--font-sans);
+  --font-tanker: var(--font-heading);
+}
+
+html {
+  @apply [scrollbar-width:thin] scroll-smooth [scroll-padding:120px];
+}
+
+body {
+  @apply bg-background text-foreground font-manrope scroll-smooth [scroll-padding:120px] selection:bg-primary/10 selection:text-primary;
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  50% {
+    scale: 1 1.5;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
