@@ -26,7 +26,7 @@ const Navbar = () => {
         animate={{
           backdropFilter: scrolled ? "blur(4px)" : "none",
           backgroundColor: scrolled
-            ? "oklch(from var(--background) l c h / 0.3)"
+            ? "oklch(from var(--background) l c h / 0.35)"
             : "transparent",
           scaleX: scrolled ? 0.975 : 1,
         }}
@@ -51,16 +51,18 @@ const Navbar = () => {
           [ Anupam Singh ]
         </m.a>
         <div className="flex items-center gap-8">
-          {navLinks.map((link, index) => {
-            return (
-              <NavLink
-                key={link.id}
-                id={link.id}
-                title={link.title}
-                index={index}
-              />
-            );
-          })}
+          <div className="items-center gap-8 hidden lg:flex">
+            {navLinks.map((link, index) => {
+              return (
+                <NavLink
+                  key={link.id}
+                  id={link.id}
+                  title={link.title}
+                  index={index}
+                />
+              );
+            })}
+          </div>
           <m.div {...fadeInAnimation(navLinks.length * 0.15)}>
             <Button
               href="/resume.pdf"

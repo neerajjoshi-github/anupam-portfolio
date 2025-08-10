@@ -8,9 +8,9 @@ import * as m from "motion/react-m";
 
 const Hero = () => {
   return (
-    <div className="min-h-screen flex w-full items-center">
+    <div className="min-h-screen flex w-full items-center pt-20">
       <div className="flex flex-col gap-6">
-        <h1 className="text-8xl font-tanker lowercase">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-tanker lowercase">
           <TextEffect per="char" delay={0.25} preset="fade-in-blur">
             Hello,
           </TextEffect>
@@ -31,7 +31,7 @@ const Hero = () => {
           delay={1.15}
           preset="fade-in-blur"
           per="line"
-          className="text-subtle text-base font-semibold"
+          className="text-sm lg:text-base text-primary font-semibold text-balance"
         >
           Cybersecurity Analyst | Penetration Tester | Bug Hunter
         </TextEffect>
@@ -39,7 +39,7 @@ const Hero = () => {
           delay={1.35}
           preset="fade-in-blur"
           per="line"
-          className="text-subtle text-base font-semibold"
+          className="text-subtle text-sm lg:text-base font-semibold"
         >
           I specialize in finding and fixing security flaws before attackers can
           exploit them. From vulnerability assessments to web app pentesting and
@@ -61,7 +61,7 @@ const Hero = () => {
         >
           <Button
             href="#contact"
-            className="w-fit text-lg h-14 px-8 font-semibold"
+            className="w-fit text-base sm:text-lg h-12 sm:h-14 px-8 font-semibold"
           >
             Get In Touch
           </Button>

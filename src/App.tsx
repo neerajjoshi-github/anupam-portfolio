@@ -11,7 +11,7 @@ const App = () => {
     <div className="relative min-h-screen w-full">
       <Background />
       <Navbar />
-      <div className="max-w-[1080px] w-full mx-auto px-10">
+      <div className="max-w-[1080px] w-full mx-auto px-6 sm:px-10">
         <Hero />
         <About />
         <Experience />

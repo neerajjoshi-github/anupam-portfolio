@@ -36,8 +36,8 @@ const skillsData = [
 const About = () => {
   return (
     <SectionWrapper id="about" title="About Me" position={1}>
-      <div className="flex gap-6">
-        <div className="flex flex-col gap-6 text-subtle flex-1 min-w-0">
+      <div className="flex flex-col-reverse lg:flex-row gap-6">
+        <div className="flex flex-col gap-6 text-subtle flex-1 min-w-0 text-sm lg:text-base">
           <p>
             I am <span className="text-primary">Anupam Singh</span>, a
             passionate
@@ -75,10 +75,10 @@ const About = () => {
           </p>
         </div>
 
-        <CometCard className="w-[40%] rounded-lg  p-1">
+        <CometCard className="w-full lg:w-[40%] rounded-lg p-1 max-w-[400px] mx-auto">
           <img
             src="https://images.unsplash.com/photo-1695927621677-ec96e048dce2?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            className="rounded-lg h-[420px] w-full object-cover object-top"
+            className="rounded-lg h-80 sm:h-[420px] w-full object-cover object-top"
           />
         </CometCard>
       </div>
@@ -93,7 +93,7 @@ const About = () => {
               {items.map((item) => (
                 <Card
                   key={item}
-                  className="px-3 py-1 cursor-default text-sm text-subtle rounded-md duration-300 font-medium w-fit hover:border-primary hover:text-primary transition-colors"
+                  className="px-3 py-1 cursor-default text-xs sm:text-sm text-subtle rounded-md duration-300 font-medium w-fit hover:border-primary hover:text-primary transition-colors"
                 >
                   {item}
                 </Card>

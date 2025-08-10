@@ -12,21 +12,23 @@ const Experience = () => {
       id="experience"
       title=" Experience"
       position={2}
-      className="mt-24"
+      className="mt-16 sm:mt-24"
     >
-      <Card className="p-8 flex flex-col">
+      <Card className="px-4 py-8 sm:px-8 flex flex-col">
         <a
           target="_blank"
           href="https://www.lunacal.ai/"
-          className="text-xl font-bold hover:underline block w-fit"
+          className="text-lg sm:text-xl font-bold hover:underline block w-fit"
         >
           Lunacal.ai
         </a>
-        <p className="text-primary mt-2 font-medium">
+        <p className="text-sm sm:text-base text-primary mt-2 font-medium">
           Web App Penetration Tester
         </p>
-        <p className="font-medium">December 2024 - Present </p>
-        <div className="mt-6 flex flex-col gap-4 text-subtle">
+        <p className="text-sm sm:text-base font-medium">
+          December 2024 - Present{" "}
+        </p>
+        <div className="text-sm sm:text-base mt-6 flex flex-col gap-4 text-subtle">
           <p className="">
             As a Web App Penetration Testing Intern at Lunacal, I was
             responsible for identifying and reporting security vulnerabilities
@@ -55,7 +57,7 @@ const Experience = () => {
       <h3 className="text-xl font-bold text-white mb-6">
         Bounty Acknowledgement
       </h3>
-      <div className="grid grid-cols-6 gap-6">
+      <div className="grid grid-cols-4 sm:grid-cols-6 gap-4 md:gap-6">
         {images.map((src, index) => (
           <Card
             key={index}

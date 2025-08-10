@@ -35,8 +35,10 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({
       id={id}
       className={cn(`w-full`, className)}
     >
-      <h2 className="text-4xl font-bold mb-8 flex items-center gap-6 text-primary">
-        <span className="">0{position}.</span> {title}{" "}
+      <h2 className="text-2xl sm:text-3xl md:text-4xl whitespace-nowrap font-bold mb-8 flex items-center gap-6 text-primary">
+        <span>
+          <span className="">0{position}.</span> <span>{title}</span>
+        </span>
         <m.div
           initial={{ scaleX: 0, originX: 0 }}
           whileInView={{ scaleX: 1 }}
