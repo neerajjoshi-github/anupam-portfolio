@@ -3,7 +3,7 @@ import {
   presetVariants,
 } from "@utils/animations";
 import { cn } from "@utils/index";
-import * as m from "motion/react-m";
+import { motion } from "motion/react";
 
 type SectionWrapperProps = {
   children: React.ReactNode;
@@ -21,7 +21,7 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({
   position,
 }) => {
   return (
-    <m.section
+    <motion.section
       variants={createVariantsWithTransition(
         presetVariants["fade-in-blur"].item
       )}
@@ -39,7 +39,7 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({
         <span>
           <span className="">0{position}.</span> <span>{title}</span>
         </span>
-        <m.div
+        <motion.div
           initial={{ scaleX: 0, originX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true, amount: 0.5 }}
@@ -48,7 +48,7 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({
         />
       </h2>
       {children}
-    </m.section>
+    </motion.section>
   );
 };
 

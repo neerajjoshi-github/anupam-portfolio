@@ -2,7 +2,7 @@ import type React from "react";
 import { useState } from "react";
 import Button from "./Button";
 import { useMotionValueEvent, useScroll } from "motion/react";
-import * as m from "motion/react-m";
+import { motion } from "motion/react";
 import { fadeInAnimation } from "@utils/animations";
 
 const navLinks = [
@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-0 z-10 left-0 w-full flex items-center justify-center p-2">
-      <m.nav
+      <motion.nav
         animate={{
           backdropFilter: scrolled ? "blur(4px)" : "none",
           backgroundColor: scrolled
@@ -35,7 +35,7 @@ const Navbar = () => {
         }}
         className="flex items-center justify-between  max-w-[1200px] w-full py-3 px-6 rounded-xl"
       >
-        <m.a
+        <motion.a
           initial={{
             opacity: 0,
           }}
@@ -49,7 +49,7 @@ const Navbar = () => {
           className="font-bold text-primary"
         >
           [ Anupam Singh ]
-        </m.a>
+        </motion.a>
         <div className="flex items-center gap-8">
           <div className="items-center gap-8 hidden lg:flex">
             {navLinks.map((link, index) => {
@@ -63,7 +63,7 @@ const Navbar = () => {
               );
             })}
           </div>
-          <m.div {...fadeInAnimation(navLinks.length * 0.15)}>
+          <motion.div {...fadeInAnimation(navLinks.length * 0.15)}>
             <Button
               href="/resume.pdf"
               target="_blank"
@@ -71,9 +71,9 @@ const Navbar = () => {
             >
               Resume
             </Button>
-          </m.div>
+          </motion.div>
         </div>
-      </m.nav>
+      </motion.nav>
     </div>
   );
 };
@@ -86,13 +86,13 @@ type NavLinkProps = {
 
 const NavLink: React.FC<NavLinkProps> = ({ id, title, index }) => {
   return (
-    <m.a
+    <motion.a
       {...fadeInAnimation(index * 0.15)}
       href={`#${id}`}
       className="text-white font-semibold text-sm hover:text-primary flex items-center gap-2"
     >
       <span className="text-primary">0{index + 1}.</span> {title}
-    </m.a>
+    </motion.a>
   );
 };
 

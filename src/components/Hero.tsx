@@ -4,7 +4,7 @@ import {
 } from "@utils/animations";
 import Button from "./Button";
 import { TextEffect } from "./ui/TextEffect";
-import * as m from "motion/react-m";
+import { motion } from "motion/react";
 
 const Hero = () => {
   return (
@@ -47,7 +47,7 @@ const Hero = () => {
           passion for protecting digital assets. Always learning, always
           securing.
         </TextEffect>
-        <m.div
+        <motion.div
           initial="hidden"
           animate="visible"
           exit="exit"
@@ -65,7 +65,7 @@ const Hero = () => {
           >
             Get In Touch
           </Button>
-        </m.div>
+        </motion.div>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import {
   useMotionTemplate,
 } from "motion/react";
 import { cn } from "@utils/index";
-import * as m from "motion/react-m";
+import { motion } from "motion/react";
 
 export const CometCard = ({
   rotateDepth = 17.5,
@@ -80,7 +80,7 @@ export const CometCard = ({
 
   return (
     <div className={cn("perspective-distant transform-3d", className)}>
-      <m.div
+      <motion.div
         ref={ref}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -101,7 +101,7 @@ export const CometCard = ({
         className="relative rounded-2xl"
       >
         {children}
-        <m.div
+        <motion.div
           className="pointer-events-none absolute inset-0 z-50 h-full w-full rounded-[16px] mix-blend-overlay"
           style={{
             background: glareBackground,
@@ -109,7 +109,7 @@ export const CometCard = ({
           }}
           transition={{ duration: 0.2 }}
         />
-      </m.div>
+      </motion.div>
     </div>
   );
 };
