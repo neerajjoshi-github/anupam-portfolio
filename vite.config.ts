@@ -11,7 +11,4 @@ export default defineConfig({
       "@utils": path.resolve(__dirname, "src/utils"),
     },
   },
-  server: {
-    allowedHosts: ["consumers-buffalo-everyday-mrna.trycloudflare.com"],
-  },
 });
